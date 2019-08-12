@@ -74,6 +74,8 @@ RUN set -ex \
 
 COPY script/entrypoint.sh /entrypoint.sh
 COPY config/airflow.cfg ${AIRFLOW_USER_HOME}/airflow.cfg
+COPY ini/odbc.ini /etc/
+COPY ini/odbcinst.ini /etc/
 
 RUN chown -R airflow: ${AIRFLOW_USER_HOME}
 
